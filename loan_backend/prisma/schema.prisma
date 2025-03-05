@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Loan {
+  id           Int     @id @default(autoincrement())
+  bankName     String
+  loanType     String
+  principal    Float
+  paid         Float
+  interestRate Float
+  emi          Float
+  remaining    Float
+}
+
